@@ -24,6 +24,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.googlecode.flyway</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-meta</artifactId>
             <version>3.11.10</version>
@@ -121,6 +127,21 @@
                     </generator>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.googlecode.flyway</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <driver>org.postgresql.Driver</driver>
+                    <url>${database.url}</url>
+                    <user>${database.user}</user>
+                    <password>${database.password}</password>
+                    <baseDir>db/migration</baseDir>
+                </configuration>
+            </plugin>
+
+
         </plugins>
     </build>
 </project>
