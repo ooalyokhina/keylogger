@@ -19,7 +19,13 @@
         <dependency>
             <groupId>keylogger</groupId>
             <artifactId>ws</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>keylogger</groupId>
+            <artifactId>domain</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
