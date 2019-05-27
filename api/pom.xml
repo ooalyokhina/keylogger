@@ -6,9 +6,11 @@
         <artifactId>keylogger</artifactId>
         <groupId>keylogger</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <packaging>jar</packaging>
     <artifactId>api</artifactId>
 
     <dependencies>

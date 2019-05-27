@@ -6,16 +6,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import ru.hse.spb.keylogger.dto.ResponseDto;
 
 import javax.annotation.Nonnull;
 
 
-@RequestMapping("/api")
+@RequestMapping("/user")
 public interface UserService {
-    @RequestMapping(method = RequestMethod.GET,
+    @RequestMapping(method = RequestMethod.POST,
             value = "/register",
-            produces = MediaType.APPLICATION_JSON_VALUE)
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    String register(@Nonnull @RequestParam("login") String login,
-                    @Nonnull @RequestParam("password") String password);
+    ResponseDto register(@Nonnull @RequestParam("login") String login,
+                         @Nonnull @RequestParam("password") String password);
 }

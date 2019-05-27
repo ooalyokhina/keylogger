@@ -12,6 +12,8 @@
         <relativePath>..</relativePath>
     </parent>
 
+    <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
