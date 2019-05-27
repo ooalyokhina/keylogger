@@ -9,6 +9,7 @@
         <groupId>keylogger</groupId>
         <artifactId>server</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>..</relativePath>
     </parent>
 
     <dependencies>
@@ -25,6 +26,12 @@
         <dependency>
             <groupId>keylogger</groupId>
             <artifactId>domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>keylogger</groupId>
+            <artifactId>api</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

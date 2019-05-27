@@ -6,6 +6,7 @@
         <artifactId>server</artifactId>
         <groupId>keylogger</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,6 +16,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>keylogger</groupId>
+            <artifactId>api</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

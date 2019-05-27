@@ -23,9 +23,8 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SchemaVersion implements Serializable {
 
-    private static final long serialVersionUID = -1331387308;
+    private static final long serialVersionUID = 1667037;
 
-    private Integer   installedRank;
     private String    version;
     private String    description;
     private String    type;
@@ -34,12 +33,12 @@ public class SchemaVersion implements Serializable {
     private String    installedBy;
     private Timestamp installedOn;
     private Integer   executionTime;
-    private Boolean   success;
+    private String    state;
+    private Boolean   currentVersion;
 
     public SchemaVersion() {}
 
     public SchemaVersion(SchemaVersion value) {
-        this.installedRank = value.installedRank;
         this.version = value.version;
         this.description = value.description;
         this.type = value.type;
@@ -48,11 +47,11 @@ public class SchemaVersion implements Serializable {
         this.installedBy = value.installedBy;
         this.installedOn = value.installedOn;
         this.executionTime = value.executionTime;
-        this.success = value.success;
+        this.state = value.state;
+        this.currentVersion = value.currentVersion;
     }
 
     public SchemaVersion(
-        Integer   installedRank,
         String    version,
         String    description,
         String    type,
@@ -61,9 +60,9 @@ public class SchemaVersion implements Serializable {
         String    installedBy,
         Timestamp installedOn,
         Integer   executionTime,
-        Boolean   success
+        String    state,
+        Boolean   currentVersion
     ) {
-        this.installedRank = installedRank;
         this.version = version;
         this.description = description;
         this.type = type;
@@ -72,15 +71,8 @@ public class SchemaVersion implements Serializable {
         this.installedBy = installedBy;
         this.installedOn = installedOn;
         this.executionTime = executionTime;
-        this.success = success;
-    }
-
-    public Integer getInstalledRank() {
-        return this.installedRank;
-    }
-
-    public void setInstalledRank(Integer installedRank) {
-        this.installedRank = installedRank;
+        this.state = state;
+        this.currentVersion = currentVersion;
     }
 
     public String getVersion() {
@@ -147,20 +139,27 @@ public class SchemaVersion implements Serializable {
         this.executionTime = executionTime;
     }
 
-    public Boolean getSuccess() {
-        return this.success;
+    public String getState() {
+        return this.state;
     }
 
-    public void setSuccess(Boolean success) {
-        this.success = success;
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Boolean getCurrentVersion() {
+        return this.currentVersion;
+    }
+
+    public void setCurrentVersion(Boolean currentVersion) {
+        this.currentVersion = currentVersion;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("SchemaVersion (");
 
-        sb.append(installedRank);
-        sb.append(", ").append(version);
+        sb.append(version);
         sb.append(", ").append(description);
         sb.append(", ").append(type);
         sb.append(", ").append(script);
@@ -168,7 +167,8 @@ public class SchemaVersion implements Serializable {
         sb.append(", ").append(installedBy);
         sb.append(", ").append(installedOn);
         sb.append(", ").append(executionTime);
-        sb.append(", ").append(success);
+        sb.append(", ").append(state);
+        sb.append(", ").append(currentVersion);
 
         sb.append(")");
         return sb.toString();

@@ -43,7 +43,8 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<SchemaVersionRecord> SCHEMA_VERSION_PK = UniqueKeys0.SCHEMA_VERSION_PK;
+    public static final UniqueKey<SchemaVersionRecord> SCHEMA_VERSION_PRIMARY_KEY = UniqueKeys0.SCHEMA_VERSION_PRIMARY_KEY;
+    public static final UniqueKey<SchemaVersionRecord> SCHEMA_VERSION_SCRIPT_UNIQUE = UniqueKeys0.SCHEMA_VERSION_SCRIPT_UNIQUE;
     public static final UniqueKey<WorkerRecord> WORKER_PKEY = UniqueKeys0.WORKER_PKEY;
     public static final UniqueKey<WorkerRecord> WORKER_LOGIN_KEY = UniqueKeys0.WORKER_LOGIN_KEY;
     public static final UniqueKey<WorklogRecord> WORKLOG_PKEY = UniqueKeys0.WORKLOG_PKEY;
@@ -63,7 +64,8 @@ public class Keys {
     }
 
     private static class UniqueKeys0 {
-        public static final UniqueKey<SchemaVersionRecord> SCHEMA_VERSION_PK = Internal.createUniqueKey(SchemaVersion.SCHEMA_VERSION, "schema_version_pk", SchemaVersion.SCHEMA_VERSION.INSTALLED_RANK);
+        public static final UniqueKey<SchemaVersionRecord> SCHEMA_VERSION_PRIMARY_KEY = Internal.createUniqueKey(SchemaVersion.SCHEMA_VERSION, "schema_version_primary_key", SchemaVersion.SCHEMA_VERSION.VERSION);
+        public static final UniqueKey<SchemaVersionRecord> SCHEMA_VERSION_SCRIPT_UNIQUE = Internal.createUniqueKey(SchemaVersion.SCHEMA_VERSION, "schema_version_script_unique", SchemaVersion.SCHEMA_VERSION.SCRIPT);
         public static final UniqueKey<WorkerRecord> WORKER_PKEY = Internal.createUniqueKey(Worker.WORKER, "worker_pkey", Worker.WORKER.ID);
         public static final UniqueKey<WorkerRecord> WORKER_LOGIN_KEY = Internal.createUniqueKey(Worker.WORKER, "worker_login_key", Worker.WORKER.LOGIN);
         public static final UniqueKey<WorklogRecord> WORKLOG_PKEY = Internal.createUniqueKey(Worklog.WORKLOG, "worklog_pkey", Worklog.WORKLOG.ID);
