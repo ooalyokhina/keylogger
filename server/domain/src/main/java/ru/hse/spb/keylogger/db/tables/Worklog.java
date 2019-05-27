@@ -41,7 +41,7 @@ import ru.hse.spb.keylogger.db.tables.records.WorklogRecord;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Worklog extends TableImpl<WorklogRecord> {
 
-    private static final long serialVersionUID = -1590203199;
+    private static final long serialVersionUID = -1880699134;
 
     /**
      * The reference instance of <code>public.worklog</code>
@@ -62,10 +62,9 @@ public class Worklog extends TableImpl<WorklogRecord> {
     public final TableField<WorklogRecord, Long> ID = createField("id", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('worklog_id_seq'::regclass)", org.jooq.impl.SQLDataType.BIGINT)), this, "");
 
     /**
-     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using {@literal <deprecationOnUnknownTypes/>} in your code generator configuration.
+     * The column <code>public.worklog.changes</code>.
      */
-    @java.lang.Deprecated
-    public final TableField<WorklogRecord, Object> CHANGES = createField("changes", org.jooq.impl.DefaultDataType.getDefaultDataType("\"pg_catalog\".\"jsonb\""), this, "");
+    public final TableField<WorklogRecord, String> CHANGES = createField("changes", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
      * The column <code>public.worklog.file_name</code>.
@@ -88,10 +87,9 @@ public class Worklog extends TableImpl<WorklogRecord> {
     public final TableField<WorklogRecord, String> ACTION = createField("action", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
-     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using {@literal <deprecationOnUnknownTypes/>} in your code generator configuration.
+     * The column <code>public.worklog.params</code>.
      */
-    @java.lang.Deprecated
-    public final TableField<WorklogRecord, Object> PARAMS = createField("params", org.jooq.impl.DefaultDataType.getDefaultDataType("\"pg_catalog\".\"jsonb\""), this, "");
+    public final TableField<WorklogRecord, String> PARAMS = createField("params", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
      * The column <code>public.worklog.worker_id</code>.

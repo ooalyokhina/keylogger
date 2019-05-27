@@ -10,7 +10,6 @@ import ru.hse.spb.keylogger.dto.DiffDto;
 import ru.hse.spb.keylogger.dto.ResponseDto;
 
 import javax.annotation.Nonnull;
-import java.util.List;
 
 @RequestMapping("/worklog")
 public interface WorklogService {

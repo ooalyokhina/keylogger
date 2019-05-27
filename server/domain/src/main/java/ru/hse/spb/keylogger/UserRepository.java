@@ -42,7 +42,7 @@ public class UserRepository {
         return Optional.of(tokens.get(0));
     }
 
-    private Optional<Long> getIdByToken(final String token) {
+    public Optional<Long> getIdByToken(final String token) {
         List<Long> tokens = transactionTemplate.execute(x ->
                 dslContext.select(Worker.WORKER.ID)
                         .from(Worker.WORKER)

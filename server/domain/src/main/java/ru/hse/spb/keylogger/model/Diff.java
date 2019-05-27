@@ -16,6 +16,7 @@ public class Diff {
     private final Long timestamp;
     private final String action;
     private final Map<String, String> params;
+    private final Long userId;
 
     @JsonCreator
     public Diff(@JsonProperty("changes") List<Change> changes,
@@ -23,13 +24,15 @@ public class Diff {
                 @JsonProperty("projectName") String projectName,
                 @JsonProperty("timestamp") Long timestamp,
                 @JsonProperty("action") String action,
-                @JsonProperty("params") Map<String, String> params) {
+                @JsonProperty("params") Map<String, String> params,
+                @JsonProperty("userId") Long userId) {
         this.changes = changes;
         this.fileName = fileName;
         this.projectName = projectName;
         this.timestamp = timestamp;
         this.action = action;
         this.params = params;
+        this.userId = userId;
     }
 
     public List<Change> getChanges() {
@@ -66,20 +69,25 @@ public class Diff {
                 && Objects.equals(that.projectName, projectName)
                 && Objects.equals(that.timestamp, timestamp)
                 && Objects.equals(that.action, action)
-                && Objects.equals(that.params, params);
+                && Objects.equals(that.params, params)
+                && Objects.equals(that.userId, userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(changes, fileName, projectName, timestamp, action, params);
+        return Objects.hash(changes, fileName, projectName,
+                timestamp, action, params, userId);
     }
 
     @Override
     public String toString() {
         return "ResponseDto{" + changes + ", " +
                 "" + fileName + ", " + projectName + ", " +
-                timestamp + ", " + action + ", " + params + '}';
+                timestamp + ", " + action + ", " + params + ", " + userId + '}';
     }
 
+    public Long getuserId() {
+        return userId;
+    }
 }
 

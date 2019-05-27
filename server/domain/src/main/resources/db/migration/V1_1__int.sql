@@ -10,13 +10,13 @@ create index idx_worker__token on worker(token);
 
 
 create table worklog (
-  id bigserial primary key,
-  changes jsonb,
+  id big primary key,
+  changes text,
   file_name text not null,
   project_name text not null,
   timestamp bigint not null,
   action text,
-  params jsonb,
+  params text,
   worker_id bigint not null
 );
 

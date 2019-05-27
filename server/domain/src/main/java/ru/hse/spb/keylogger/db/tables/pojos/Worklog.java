@@ -22,15 +22,15 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Worklog implements Serializable {
 
-    private static final long serialVersionUID = -1560060602;
+    private static final long serialVersionUID = -1607789014;
 
     private Long   id;
-    private Object changes;
+    private String changes;
     private String fileName;
     private String projectName;
     private Long   timestamp;
     private String action;
-    private Object params;
+    private String params;
     private Long   workerId;
 
     public Worklog() {}
@@ -48,12 +48,12 @@ public class Worklog implements Serializable {
 
     public Worklog(
         Long   id,
-        Object changes,
+        String changes,
         String fileName,
         String projectName,
         Long   timestamp,
         String action,
-        Object params,
+        String params,
         Long   workerId
     ) {
         this.id = id;
@@ -74,21 +74,11 @@ public class Worklog implements Serializable {
         this.id = id;
     }
 
-
-    /**
-     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using {@literal <deprecationOnUnknownTypes/>} in your code generator configuration.
-     */
-    @java.lang.Deprecated
-    public Object getChanges() {
+    public String getChanges() {
         return this.changes;
     }
 
-
-    /**
-     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using {@literal <deprecationOnUnknownTypes/>} in your code generator configuration.
-     */
-    @java.lang.Deprecated
-    public void setChanges(Object changes) {
+    public void setChanges(String changes) {
         this.changes = changes;
     }
 
@@ -124,21 +114,11 @@ public class Worklog implements Serializable {
         this.action = action;
     }
 
-
-    /**
-     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using {@literal <deprecationOnUnknownTypes/>} in your code generator configuration.
-     */
-    @java.lang.Deprecated
-    public Object getParams() {
+    public String getParams() {
         return this.params;
     }
 
-
-    /**
-     * @deprecated Unknown data type. Please define an explicit {@link org.jooq.Binding} to specify how this type should be handled. Deprecation can be turned off using {@literal <deprecationOnUnknownTypes/>} in your code generator configuration.
-     */
-    @java.lang.Deprecated
-    public void setParams(Object params) {
+    public void setParams(String params) {
         this.params = params;
     }
 
