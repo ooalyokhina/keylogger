@@ -1,34 +1,28 @@
 package ru.hse.spb.keylogger;
 
 import org.jooq.DSLContext;
-import org.jooq.SQLDialect;
-import org.jooq.impl.DSL;
-import org.jooq.impl.DefaultDSLContext;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ru.hse.spb.keylogger.db.tables.Worker;
+import org.springframework.transaction.support.TransactionTemplate;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import javax.inject.Inject;
 
 @Repository
 public class UserRepository {
+    //TODO вот это все в properties
     String user = "keylogger_user";
     String pass = "password";
     String url = "jdbc:postgresql://localhost:5432/keylogger";
 
-    public UserRepository() {
-        try (Connection conn = DriverManager.getConnection(url, user, pass)) {
-            // Create a context for your database
-            DSLContext ctx = DSL.using(conn, SQLDialect.POSTGRES_9_4);
-            ctx.insertInto(Worker.WORKER)
-                    .columns(Worker.WORKER.LOGIN, Worker.WORKER.PASSWORD, Worker.WORKER.TOKEN)
-                    .values("a", "b", "c")
-                    .execute();
-            // Do something useful ...
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    @Inject
+    public UserRepository(TransactionTemplate transactionTemplate,
+                          DSLContext dslContext) {
+//        transactionTemplate.execute(x ->
+//                dslContext.insertInto(Worker.WORKER)
+//                        .columns(Worker.WORKER.LOGIN, Worker.WORKER.PASSWORD, Worker.WORKER.TOKEN)
+//                        .values("a1111", "b1111", "c1111")
+//                        .execute()
+        //      );
     }
+
+
 }
